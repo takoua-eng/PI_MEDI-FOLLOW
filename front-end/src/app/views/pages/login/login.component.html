@@ -1,0 +1,53 @@
+<div class="bg-light dark:bg-transparent min-vh-100 d-flex flex-row align-items-center">
+  <c-container fluid>
+    <c-row class="justify-content-center">
+      <c-col lg="12" xl="12">
+        <c-card-group>
+          <c-card class="p-4">
+            <c-card-body>
+              <form cForm>
+                <h1>Login</h1>
+                <p class="text-body-secondary">Sign In to your account</p>
+                <c-input-group class="mb-3">
+                  <span cInputGroupText>
+                    <svg cIcon name="cilUser"></svg>
+                  </span>
+                  <input autoComplete="username" cFormControl placeholder="Username" />
+                </c-input-group>
+                <c-input-group class="mb-4">
+                  <span cInputGroupText>
+                    <svg cIcon name="cilLockLocked"></svg>
+                  </span>
+                  <input autoComplete="current-password" cFormControl placeholder="Password" type="password" />
+                </c-input-group>
+                <c-row>
+                  <c-col xs="6">
+                    <button cButton class="px-4 login-btn">
+                      Login
+                    </button>
+                  </c-col>
+                  <c-col class="text-end" xs="6">
+                    <button cButton class="px-0 forgot-link">
+                      Forgot password?
+                    </button>
+                  </c-col>
+                </c-row>
+              </form>
+            </c-card-body>
+          </c-card>
+          <c-card [style.minWidth.%]="44" class="text-white py-5" style="background-color: #468ecf;">
+            <c-card-body class="text-center">
+              <div>
+                
+                <img src="assets/images/medi-follow2.png" alt="Medi-Follow Logo" class="img-fluid my-3"
+                  style="max-width: 250px;" />
+                <h2 class="slogan-georgia">Monitoring Health, Anytime, Anywhere</h2>
+
+              </div>
+            </c-card-body>
+          </c-card>
+        </c-card-group>
+      </c-col>
+    </c-row>
+  </c-container>
+</div>

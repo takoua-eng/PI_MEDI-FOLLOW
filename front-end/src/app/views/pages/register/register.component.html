@@ -1,0 +1,92 @@
+<div class="bg-light dark:bg-transparent min-vh-100 d-flex flex-row align-items-center">
+  <c-container>
+    <c-row class="justify-content-center">
+      <c-col lg="7" md="9" xl="6">
+        <c-card class="mx-4">
+          <c-card-body class="p-4">
+            <form cForm>
+              <h1>Register</h1>
+              <p class="text-body-secondary">Create account</p>
+
+              <!-- First Name -->
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilUser"></svg>
+                </span>
+                <input cFormControl placeholder="First Name" required />
+              </c-input-group>
+
+              <!-- Last Name -->
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilUser"></svg>
+                </span>
+                <input cFormControl placeholder="Last Name" required />
+              </c-input-group>
+
+              <!-- Username -->
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilUser"></svg>
+                </span>
+                <input autoComplete="username" cFormControl placeholder="Username" required />
+              </c-input-group>
+
+              <!-- Email -->
+              <c-input-group class="mb-3">
+                <span cInputGroupText>@</span>
+                <input type="email" autoComplete="email" cFormControl placeholder="Email" required />
+              </c-input-group>
+
+              <!-- Phone Number -->
+
+              <c-input-group class="mb-3">
+                <input #phoneInput id="phone" type="tel" class="form-control" placeholder="Enter phone number" />
+              </c-input-group> 
+              <!-- Role Selection -->
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilPeople"></svg>
+                </span>
+                <select cFormControl required>
+                  <option value="">Select Role</option>
+                  <option value="PATIENT">Patient</option>
+                  <option value="PHYSICIAN">Physician</option>
+                  <option value="NURSE">Nurse</option>
+                  <option value="COORDINATOR">Coordinator</option>
+                  <option value="ADMIN">Administrator</option>
+                  <option value="AUDITOR">Auditor</option>
+                  <option value="SUPER_ADMIN">Super Admin</option>
+                </select>
+              </c-input-group>
+
+              <!-- Password -->
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilLockLocked"></svg>
+                </span>
+                <input autoComplete="new-password" type="password" cFormControl placeholder="Password" required />
+              </c-input-group>
+
+              <!-- Repeat Password -->
+              <c-input-group class="mb-4">
+                <span cInputGroupText>
+                  <svg cIcon name="cilLockLocked"></svg>
+                </span>
+                <input autoComplete="new-password" type="password" cFormControl placeholder="Repeat Password"
+                  required />
+              </c-input-group>
+
+              <div class="d-grid">
+                <button cButton color="success" type="submit">
+                  Create Account
+                </button>
+              </div>
+
+            </form>
+          </c-card-body>
+        </c-card>
+      </c-col>
+    </c-row>
+  </c-container>
+</div>
