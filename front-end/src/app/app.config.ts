@@ -6,27 +6,45 @@ import {
   withHashLocation,
   withInMemoryScrolling,
   withRouterConfig,
-  withViewTransitions
+  withViewTransitions,
 } from '@angular/router';
 import { IconSetService } from '@coreui/icons-angular';
 import { routes } from './app.routes';
 
+// ngx-translate imports
+import { provideTranslateService } from '@ngx-translate/core';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
+import { provideHttpClient } from '@angular/common/http'; // obligatoire
+
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes,
+    provideHttpClient(), // requis pour charger les fichiers JSON
+
+    provideRouter(
+      routes,
       withRouterConfig({
-        onSameUrlNavigation: 'reload'
+        onSameUrlNavigation: 'reload',
       }),
       withInMemoryScrolling({
         scrollPositionRestoration: 'top',
-        anchorScrolling: 'enabled'
+        anchorScrolling: 'enabled',
       }),
       withEnabledBlockingInitialNavigation(),
       withViewTransitions(),
-      withHashLocation()
+      withHashLocation(),
     ),
-    IconSetService,
-    provideAnimationsAsync()
-  ]
-};
 
+    IconSetService,
+    provideAnimationsAsync(),
+
+    // Configuration ngx-translate moderne (recommandée pour standalone)
+    provideTranslateService({
+      defaultLanguage: 'fr',
+      useDefaultLang: true,
+      loader: provideTranslateHttpLoader({
+        prefix: './assets/i18n/', // ou '/assets/i18n/' selon ton build
+        suffix: '.json',
+      }),
+    }),
+  ],
+};

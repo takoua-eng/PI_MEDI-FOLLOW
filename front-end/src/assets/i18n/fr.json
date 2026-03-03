@@ -1,0 +1,15 @@
+{
+  "dashboard": "Tableau de bord",
+  "users": "Utilisateurs",
+  "settings": "Paramètres",
+  "account": "Compte",
+  "profile": "Profil",
+  "logout": "Déconnexion",
+  "updates": "Mises à jour",
+  "messages": "Messages",
+  "tasks": "Tâches",
+  "comments": "Commentaires",
+  "light": "Clair",
+  "dark": "Sombre",
+  "auto": "Auto"
+}
