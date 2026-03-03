@@ -1,0 +1,9 @@
+<div class="form-card">
+  <h3>{{ isEdit ? 'Modifier' : 'Ajouter' }} coordinator</h3>
+  <form (ngSubmit)="submit()">
+    <div class="mb-2"><label>Nom</label><input class="form-control" [(ngModel)]="model.name" name="name" required /></div>
+    <div class="mb-2"><label>Unité</label><input class="form-control" [(ngModel)]="model.unit" name="unit" /></div>
+    <div class="mb-2"><label>Notes</label><textarea class="form-control" [(ngModel)]="model.notes" name="notes"></textarea></div>
+    <div class="d-flex gap-2"><button class="btn btn-primary" type="submit">Enregistrer</button><button class="btn btn-secondary" type="button" (click)="goBack()">Annuler</button></div>
+  </form>
+</div>

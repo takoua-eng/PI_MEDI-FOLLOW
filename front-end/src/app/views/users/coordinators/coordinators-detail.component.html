@@ -1,0 +1,6 @@
+<div class="detail-card">
+  <h3>{{ coordinator.name }}</h3>
+  <p><strong>Unité:</strong> {{ coordinator.unit }}</p>
+  <p *ngIf="coordinator.notes"><strong>Notes:</strong> {{ coordinator.notes }}</p>
+  <button class="btn btn-secondary" (click)="router.navigate(['/users/coordinators'])">Retour</button>
+</div>
