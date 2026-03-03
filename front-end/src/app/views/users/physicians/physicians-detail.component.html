@@ -1,0 +1,9 @@
+<div class="physician-detail" *ngIf="physician">
+  <h2>Détails de {{ physician.name }}</h2>
+  <p><strong>Spécialité:</strong> {{ physician.specialty }}</p>
+  <p *ngIf="physician.age"><strong>Age:</strong> {{ physician.age }}</p>
+  <p *ngIf="physician.notes"><strong>Notes:</strong> {{ physician.notes }}</p>
+  <div style="margin-top:1rem">
+    <button class="btn btn-secondary" (click)="router.navigate(['/users/physicians'])">Retour</button>
+  </div>
+</div>
