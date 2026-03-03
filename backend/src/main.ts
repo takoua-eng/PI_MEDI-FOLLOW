@@ -5,7 +5,13 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // OpenAPI (Swagger) for API docs + Postman import
+  // ✅ ACTIVER CORS POUR ANGULAR
+  app.enableCors({
+    origin: 'http://localhost:4200', // Angular
+    credentials: true,
+  });
+
+  // Swagger
   const config = new DocumentBuilder()
     .setTitle('Mediflow API')
     .setDescription('API for Mediflow backend. Import in Postman via Import → Link → {{baseUrl}}/api-json')
@@ -15,6 +21,7 @@ async function bootstrap() {
     .addTag('roles', 'Role CRUD')
     .addTag('upload', 'File upload')
     .build();
+
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
