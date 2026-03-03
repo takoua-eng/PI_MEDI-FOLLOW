@@ -21,6 +21,11 @@ export const routes: Routes = [
         path: 'theme',
         loadChildren: () => import('./views/theme/routes').then((m) => m.routes)
       },
+      //pour users(li fi wasto mnedyin f routes.ts mtaa users)
+      {
+        path: 'users',
+        loadChildren: () => import('./views/users/routes').then(m => m.routes)
+      },
       {
         path: 'base',
         loadChildren: () => import('./views/base/routes').then((m) => m.routes)
@@ -40,6 +45,14 @@ export const routes: Routes = [
       {
         path: 'notifications',
         loadChildren: () => import('./views/notifications/routes').then((m) => m.routes)
+      },
+      {
+        path: 'audit',
+        loadComponent: () => import('./views/audit/audit.component').then(m => m.AuditComponent)
+      },
+      {
+        path: 'services',
+        loadComponent: () => import('./views/services/services.component').then(m => m.ServicesComponent)
       },
       {
         path: 'widgets',
