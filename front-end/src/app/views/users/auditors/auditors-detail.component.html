@@ -1,0 +1,6 @@
+<div class="detail-card">
+  <h3>{{ auditor.name }}</h3>
+  <p><strong>Département:</strong> {{ auditor.department }}</p>
+  <p *ngIf="auditor.notes"><strong>Notes:</strong> {{ auditor.notes }}</p>
+  <button class="btn btn-secondary" (click)="router.navigate(['/users/auditors'])">Retour</button>
+</div>

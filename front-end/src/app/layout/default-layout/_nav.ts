@@ -10,25 +10,105 @@ export const navItems: INavData[] = [
       text: 'NEW'
     }
   },
+  // {
+  //   title: true,
+  //   name: 'Theme'
+  // },
+  // {
+  //   name: 'Colors',
+  //   url: '/theme/colors',
+  //   iconComponent: { name: 'cil-drop' }
+  // },
+  // {
+  //   name: 'Typography',
+  //   url: '/theme/typography',
+  //   linkProps: { fragment: 'headings' },
+  //   iconComponent: { name: 'cil-pencil' }
+  // },
+  // {
+  //   name: 'Components',
+  //   title: true
+  // },
+
+  
+  // nav items for users (hedha lien li yjih router outlet bch ychofo (ychof chnowa yafficher fel body ) leken lazmo ymchy lel app.routes.ts il general bch ychof bedhabet il componenet)
   {
-    title: true,
-    name: 'Theme'
+    name: 'Users',
+    url: '/users',
+    iconComponent: { name: 'cil-user' },
+    children: [
+      {
+        name: 'Patients',
+        url: '/users/patients',
+        iconComponent: { name: 'cil-notes' }
+      },
+      {
+        name: 'Physicians',
+        url: '/users/physicians',
+        iconComponent: { name: 'cil-medical-cross' }
+      },
+      {
+        name: 'Nurses',
+        url: '/users/nurses',
+        iconComponent: { name: 'cil-medical' }
+      },
+      {
+        name: 'Coordinators',
+        url: '/users/coordinators',
+        iconComponent: { name: 'cil-people' }
+      },
+      {
+        name: 'Auditors',
+        url: '/users/auditors',
+        iconComponent: { name: 'cil-check' }
+      }
+    ]
+  },
+
+  {
+    name: 'Alerts & Notifications',
+    url: '/notifications',
+    iconComponent: { name: 'cil-bell' },
+    children: [
+      {
+        name: 'Alerts',
+        url: '/notifications/alerts',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Badges',
+        url: '/notifications/badges',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Modal',
+        url: '/notifications/modal',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Toast',
+        url: '/notifications/toasts',
+        icon: 'nav-icon-bullet'
+      }
+    ]
   },
   {
-    name: 'Colors',
-    url: '/theme/colors',
-    iconComponent: { name: 'cil-drop' }
+    name: 'Services',
+    url: '/services',
+    iconComponent: { name: 'cil-building' }
   },
   {
-    name: 'Typography',
-    url: '/theme/typography',
-    linkProps: { fragment: 'headings' },
-    iconComponent: { name: 'cil-pencil' }
+    name: 'Audit & Traceability',
+    url: '/audit',
+    iconComponent: { name: 'cil-folder-open' }
   },
   {
-    name: 'Components',
-    title: true
-  },
+    name: 'Settings',
+    url: '/settings',
+    iconComponent: { name: 'cil-settings' }
+  }, 
+
+
   {
     name: 'Base',
     url: '/base',
@@ -351,33 +431,7 @@ export const navItems: INavData[] = [
       }
     ]
   },
-  {
-    name: 'Notifications',
-    url: '/notifications',
-    iconComponent: { name: 'cil-bell' },
-    children: [
-      {
-        name: 'Alerts',
-        url: '/notifications/alerts',
-        icon: 'nav-icon-bullet'
-      },
-      {
-        name: 'Badges',
-        url: '/notifications/badges',
-        icon: 'nav-icon-bullet'
-      },
-      {
-        name: 'Modal',
-        url: '/notifications/modal',
-        icon: 'nav-icon-bullet'
-      },
-      {
-        name: 'Toast',
-        url: '/notifications/toasts',
-        icon: 'nav-icon-bullet'
-      }
-    ]
-  },
+  
   {
     name: 'Widgets',
     url: '/widgets',

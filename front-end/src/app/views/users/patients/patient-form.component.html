@@ -1,0 +1,27 @@
+<div class="patient-form">
+  <h2 *ngIf="!isEdit">Créer un patient</h2>
+  <h2 *ngIf="isEdit">Modifier le patient</h2>
+
+  <form (ngSubmit)="submit()">
+    <div>
+      <label>Nom</label>
+      <input [(ngModel)]="model.name" name="name" required />
+    </div>
+    <div>
+      <label>Maladie</label>
+      <input [(ngModel)]="model.disease" name="disease" required />
+    </div>
+    <div>
+      <label>Age</label>
+      <input type="number" [(ngModel)]="model.age" name="age" />
+    </div>
+    <div>
+      <label>Notes</label>
+      <textarea [(ngModel)]="model.notes" name="notes"></textarea>
+    </div>
+    <div style="margin-top:1rem">
+      <button type="submit">Enregistrer</button>
+      <button type="button" (click)="goBack()">Annuler</button>
+    </div>
+  </form>
+</div>
