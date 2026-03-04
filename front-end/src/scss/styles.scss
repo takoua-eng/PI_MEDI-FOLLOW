@@ -14,15 +14,16 @@
 // Some temp fixes
 //@use "fixes";
 
-// If you want to add custom CSS you can put it here.
+// Si tu veux ajouter du CSS personnalisé
 @use "custom";
 
 // Examples
-// We use those styles to show code examples, you should remove them in your application.
+// On utilise ces styles pour montrer des exemples, tu peux les enlever
 @use "examples";
 
 @import "intl-tel-input/build/css/intlTelInput.css";
 
+// --- Styles custom ---
 .login-btn {
   background-color: #468ecf !important;
   border-color: #468ecf !important;
@@ -30,7 +31,7 @@
 }
 
 .login-btn:hover {
-  background-color: #357ab8 !important; /* un peu plus foncé */
+  background-color: #357ab8 !important;
   border-color: #357ab8 !important;
 }
 
@@ -49,7 +50,7 @@
 
 c-card-group {
   width: 100%;
-  max-width: 1200px; /* contrôle max largeur */
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -64,59 +65,23 @@ c-card-group {
   margin-top: 20px;
 }
 
-
 .slogan-georgia {
-    font-family: Georgia, serif;
-    font-size: 28px;
-    font-weight: normal;
-    color: #ffffff;
-    text-align: center;
-    letter-spacing: 1px;
-    margin-top: 20px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: normal;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* supprime les puces de la liste */
-.ngx-intl-tel-input .iti__country-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* espace entre recherche et liste */
-.ngx-intl-tel-input .iti__search-box {
-    margin-bottom: 5px;
-}
-
-/* aligne drapeau + texte */
-.ngx-intl-tel-input .iti__country {
-    display: flex;
-    align-items: center;
-}
-
-/* largeur du champ */
-.ngx-intl-tel-input input {
-    width: 100%;
-}
-
-/* intl-tel-input full width */
-.iti {
-  width: 100%;
-}
-
-/* Make it look like CoreUI inputs */
-.iti input {
-  width: 100%;
-  height: 38px;
-  border-radius: 6px;
-}
-
-/* Remove weird background behind flag */
-.iti--separate-dial-code .iti__selected-flag {
-  background-color: transparent;
-}
-
-/* Fix alignment */
-.iti__flag-container {
-  padding-left: 8px;
-}
+/* intl-tel-input fixes */
+.ngx-intl-tel-input .iti__country-list { list-style: none; padding: 0; margin: 0; }
+.ngx-intl-tel-input .iti__search-box { margin-bottom: 5px; }
+.ngx-intl-tel-input .iti__country { display: flex; align-items: center; }
+.ngx-intl-tel-input input { width: 100%; }
+.iti { width: 100%; }
+.iti input { width: 100%; height: 38px; border-radius: 6px; }
+.iti--separate-dial-code .iti__selected-flag { background-color: transparent; }
+.iti__flag-container { padding-left: 8px; }
