@@ -6,32 +6,102 @@
           <c-card-body class="p-4">
             <form cForm>
               <h1>Register</h1>
-              <p class="text-body-secondary">Create your account</p>
+              <p class="text-body-secondary">Create account</p>
+
+              <!-- First Name -->
               <c-input-group class="mb-3">
                 <span cInputGroupText>
                   <svg cIcon name="cilUser"></svg>
                 </span>
-                <input autoComplete="name" cFormControl placeholder="Username" />
+                <input cFormControl placeholder="First Name" required />
               </c-input-group>
+
+              <!-- Last Name -->
               <c-input-group class="mb-3">
-                <span cInputGroupText>&#64;</span>
-                <input autoComplete="email" cFormControl placeholder="Email" />
+                <span cInputGroupText>
+                  <svg cIcon name="cilUser"></svg>
+                </span>
+                <input cFormControl placeholder="Last Name" required />
               </c-input-group>
+
+              <!-- Username -->
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilUser"></svg>
+                </span>
+                <input autoComplete="username" cFormControl placeholder="Username" required />
+              </c-input-group>
+
+              <!-- Email -->
+              <c-input-group class="mb-3">
+                <span cInputGroupText>@</span>
+                <input type="email" autoComplete="email" cFormControl placeholder="Email" required />
+              </c-input-group>
+
+              <!-- Phone Number -->
+
+              <div class="mb-3">
+                <input #phoneInput id="phone" type="tel" class="form-control" placeholder="Enter phone number"
+                  (blur)="validatePhone()" />
+              </div>
+
+              <div *ngIf="phoneError" class="text-danger small mb-3">
+                Invalid phone number
+              </div>
+              <!-- Role Selection -->
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilPeople"></svg>
+                </span>
+                <select cFormControl required>
+                  <option value="">Select Role</option>
+                  <option value="PATIENT">Patient</option>
+                  <option value="PHYSICIAN">Physician</option>
+                  <option value="NURSE">Nurse</option>
+                  <option value="COORDINATOR">Coordinator</option>
+                  <option value="ADMIN">Administrator</option>
+                  <option value="AUDITOR">Auditor</option>
+                  <option value="SUPER_ADMIN">Super Admin</option>
+                </select>
+              </c-input-group>
+
+              <!-- Password -->
               <c-input-group class="mb-3">
                 <span cInputGroupText>
                   <svg cIcon name="cilLockLocked"></svg>
                 </span>
-                <input autoComplete="new-password" cFormControl placeholder="Password" type="password" />
+                <input autoComplete="new-password" type="password" cFormControl placeholder="Password" required />
               </c-input-group>
+
+              <!-- Repeat Password -->
               <c-input-group class="mb-4">
                 <span cInputGroupText>
                   <svg cIcon name="cilLockLocked"></svg>
                 </span>
-                <input autoComplete="new-password" cFormControl placeholder="Repeat password" type="password" />
+                <input autoComplete="new-password" type="password" cFormControl placeholder="Repeat Password"
+                  required />
               </c-input-group>
-              <div class="d-grid">
-                <button cButton color="success">Create Account</button>
+
+                            <!-- Upload Photo -->
+              <div class="mb-3">
+                <label class="form-label">Profile Photo</label>
+
+                <input type="file" class="form-control" accept="image/*" (change)="onFileSelected($event)" />
               </div>
+
+              <!-- Image Preview -->
+              <div *ngIf="imagePreview" class="mb-3 text-center">
+                <img [src]="imagePreview" alt="Preview" class="img-thumbnail" style="max-width: 150px;" />
+              </div>
+
+              <div class="d-grid">
+                <button cButton color="success" type="submit">
+                  Create Account
+                </button>
+              </div>
+
+
+
             </form>
           </c-card-body>
         </c-card>
